@@ -184,24 +184,28 @@ function SessionParticipantRow({ participant, onResendInvite, onKick }) {
             <span className="text-sm font-medium text-white">{participant.username}</span>
           </div>
           {participant.discordUsername && (
-            <div className="flex items-center gap-1.5 text-xs text-zinc-500 mt-0.5">
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(participant.discordUsername);
+              }}
+              className="flex items-center gap-1.5 text-xs text-zinc-500 mt-0.5 hover:text-[#5865F2] transition-colors cursor-pointer"
+              title="Click to copy Discord username"
+            >
               <MessageSquare className="w-3 h-3 text-[#5865F2]" />
-              {participant.discordUsername}
-            </div>
+              {participant.discordUsername.split('#')[0]}
+            </button>
           )}
           <ConnectionStatus status={status} />
         </div>
       </div>
       <div className="flex items-center gap-2">
-        {status === 'waiting' && (
-          <button
-            onClick={() => onResendInvite?.(participant.id)}
-            className="p-2 rounded-lg bg-[#5865F2]/20 text-[#5865F2] hover:bg-[#5865F2]/30 transition-colors"
-            title="Resend Invite"
-          >
-            <RefreshCw className="w-4 h-4" />
-          </button>
-        )}
+        <button
+          onClick={() => onResendInvite?.(participant.id)}
+          className="p-2 rounded-lg bg-[#5865F2]/20 text-[#5865F2] hover:bg-[#5865F2]/30 transition-colors"
+          title="Resend Invite"
+        >
+          <RefreshCw className="w-4 h-4" />
+        </button>
         <button
           onClick={() => onKick?.(participant.id)}
           className="p-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors"
@@ -509,7 +513,7 @@ function Dashboard() {
                     <div>
                       <h2 className="text-lg font-semibold">Current Session</h2>
                       <p className="text-sm text-zinc-500">
-                        <span className="text-emerald-400">{connectedCount}</span> of {sessionParticipants.length} in voice
+                        <span className="text-emerald-400">{connectedCount}</span> in voice
                       </p>
                     </div>
                   </div>

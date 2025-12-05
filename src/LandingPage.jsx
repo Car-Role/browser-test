@@ -361,7 +361,7 @@ function LandingPage() {
                       </div>
                       <div>
                         <h2 className="text-sm font-semibold text-zinc-300">Current Session</h2>
-                        <p className="text-[10px] text-zinc-500"><span className="text-emerald-400">3</span> of 4 in voice</p>
+                        <p className="text-[10px] text-zinc-500"><span className="text-emerald-400">3</span> in voice</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-1.5">
@@ -378,9 +378,9 @@ function LandingPage() {
 
                   <div className="space-y-2">
                     {[
-                      { name: 'CoolGamer42', discord: 'CoolGamer#1234', status: 'connected' },
-                      { name: 'StreamFan99', discord: 'StreamFan#5678', status: 'connected' },
-                      { name: 'ProPlayer_X', discord: 'ProPlayer#9012', status: 'waiting' },
+                      { name: 'CoolGamer42', discord: 'CoolGamer', status: 'connected' },
+                      { name: 'StreamFan99', discord: 'StreamFan', status: 'connected' },
+                      { name: 'ProPlayer_X', discord: 'ProPlayer', status: 'waiting' },
                     ].map((participant, index) => (
                       <div key={index} className="flex items-center justify-between p-2.5 rounded-lg bg-[#27272a]/30 border border-[#27272a]/50">
                         <div className="flex items-center gap-2.5">
@@ -412,11 +412,9 @@ function LandingPage() {
                           </div>
                         </div>
                         <div className="flex items-center gap-1">
-                          {participant.status === 'waiting' && (
-                            <button className="p-1.5 rounded-lg bg-[#5865F2]/20 text-[#5865F2]">
-                              <RefreshCw className="w-3 h-3" />
-                            </button>
-                          )}
+                          <button className="p-1.5 rounded-lg bg-[#5865F2]/20 text-[#5865F2]">
+                            <RefreshCw className="w-3 h-3" />
+                          </button>
                           <button className="p-1.5 rounded-lg bg-red-500/10 text-red-400">
                             <UserX className="w-3 h-3" />
                           </button>
