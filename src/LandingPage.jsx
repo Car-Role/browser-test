@@ -11,7 +11,21 @@ import {
   ShieldCheck, 
   Play, 
   Menu, 
-  X 
+  X,
+  Square,
+  Shuffle,
+  ListOrdered,
+  Settings,
+  Clock,
+  Star,
+  Crown,
+  Mic,
+  Copy,
+  ExternalLink,
+  RefreshCw,
+  UserX,
+  CheckCircle2,
+  Volume2,
 } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -188,91 +202,227 @@ function LandingPage() {
             {/* Browser Header */}
             <div className="h-10 border-b border-[#27272a] bg-[#18181b] flex items-center px-4 gap-2">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-[#27272a]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#27272a]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#27272a]"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ef4444]/80"></div>
+                <div className="w-3 h-3 rounded-full bg-[#eab308]/80"></div>
+                <div className="w-3 h-3 rounded-full bg-[#22c55e]/80"></div>
               </div>
               <div className="ml-4 px-3 py-1 bg-[#09090b] rounded text-xs text-[#52525b] flex-1 max-w-xs border border-[#27272a]">
                 viewerq.gg/dashboard
               </div>
             </div>
 
-            {/* Mockup Body */}
-            <div className="grid grid-cols-12 min-h-[600px]">
-              {/* Sidebar */}
-              <div className="hidden md:block col-span-2 border-r border-[#27272a] bg-[#18181b]/30 p-4">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-2 text-[#e4e4e7]">
-                    <LayoutDashboard className="w-4 h-4" />
-                    <span className="text-sm font-medium">Dashboard</span>
+            {/* Dashboard Header */}
+            <div className="border-b border-[#27272a] bg-[#09090b]/80 px-6 py-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-gradient-to-br from-[#9146FF] to-[#5865F2] rounded-lg flex items-center justify-center">
+                      <Gamepad2 className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="font-bold text-lg">ViewerQ</span>
                   </div>
-                  <div className="flex items-center gap-2 text-[#71717a]">
-                    <Users className="w-4 h-4" />
-                    <span className="text-sm font-medium">Sessions</span>
+                  <div className="hidden sm:block h-6 w-px bg-[#27272a]"></div>
+                  <div className="hidden sm:block">
+                    <h1 className="text-base font-semibold text-white">Dashboard</h1>
+                    <p className="text-xs text-zinc-500">Welcome back, <span className="text-[#9146FF]">StreamerPro</span></p>
                   </div>
-                  <div className="flex items-center gap-2 text-[#71717a]">
-                    <MessageSquare className="w-4 h-4" />
-                    <span className="text-sm font-medium">Discord</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Queue Active
+                  </div>
+                  <div className="p-2 rounded-lg bg-[#27272a]/50 text-zinc-400">
+                    <Settings className="w-4 h-4" />
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Main Content */}
-              <div className="col-span-12 md:col-span-10 pt-16 px-8 pb-8 bg-[#09090b]">
-                <div className="flex justify-between items-center mb-8">
-                  <div>
-                    <h3 className="text-2xl font-display font-bold text-white">Queue Manager</h3>
-                    <p className="text-[#71717a] text-sm">Manage your current session and next players</p>
+            {/* Dashboard Body */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 min-h-[500px]">
+              {/* Left Column - Queue Controls */}
+              <div className="lg:col-span-4 space-y-4">
+                {/* Queue Toggle Card */}
+                <div className="p-5 rounded-2xl bg-[#18181b]/50 border border-[#27272a]">
+                  <h2 className="text-sm font-semibold mb-3 text-zinc-300">Queue Control</h2>
+                  <button className="w-full py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 bg-red-500/20 text-red-400 border border-red-500/30">
+                    <Square className="w-4 h-4" />
+                    Stop Queue
+                  </button>
+                </div>
+
+                {/* Pull Settings Card */}
+                <div className="p-5 rounded-2xl bg-[#18181b]/50 border border-[#27272a]">
+                  <h2 className="text-sm font-semibold mb-3 text-zinc-300">Pull Settings</h2>
+                  
+                  {/* Party Size */}
+                  <div className="mb-4">
+                    <label className="block text-xs font-medium text-zinc-500 mb-2">Party Size</label>
+                    <div className="flex items-center gap-1.5">
+                      {[2, 3, 4, 5, 6].map((size) => (
+                        <button
+                          key={size}
+                          className={cn(
+                            'flex-1 py-1.5 rounded-lg font-semibold text-xs transition-all border',
+                            size === 4
+                              ? 'bg-white/10 text-white border-white/50'
+                              : 'bg-[#27272a]/50 text-zinc-500 border-transparent'
+                          )}
+                        >
+                          {size}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="px-2 py-1 rounded text-xs font-medium bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">Queue Active</span>
-                    <button className="w-8 h-8 rounded flex items-center justify-center border border-[#27272a] text-[#a1a1aa]">
-                      <Zap className="w-4 h-4" />
+
+                  {/* Selection Mode */}
+                  <div className="mb-4">
+                    <label className="block text-xs font-medium text-zinc-500 mb-2">Selection Mode</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      <button className="py-2 px-3 rounded-lg font-medium text-xs flex items-center justify-center gap-1.5 bg-[#27272a]/50 text-zinc-500 border border-transparent">
+                        <ListOrdered className="w-3 h-3" />
+                        First in Queue
+                      </button>
+                      <button className="py-2 px-3 rounded-lg font-medium text-xs flex items-center justify-center gap-1.5 bg-white/10 text-white border border-white/50">
+                        <Shuffle className="w-3 h-3" />
+                        Random
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Pull Button */}
+                  <button className="w-full py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 bg-[#9146FF] text-white">
+                    <Users className="w-4 h-4" />
+                    Pull 4 Viewers
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Column - Queue List & Session */}
+              <div className="lg:col-span-8 space-y-4">
+                {/* Queue List Card */}
+                <div className="p-5 rounded-2xl bg-[#18181b]/50 border border-[#27272a]">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <h2 className="text-sm font-semibold text-zinc-300">Queue</h2>
+                      <span className="px-2 py-0.5 rounded-full bg-[#27272a] text-xs font-medium text-zinc-400">5 viewers</span>
+                    </div>
+                    <button className="flex items-center gap-1.5 px-2 py-1 rounded-lg text-xs font-medium text-red-400 hover:bg-red-500/10">
+                      <X className="w-3 h-3" />
+                      Clear
                     </button>
+                  </div>
+
+                  <div className="space-y-2">
+                    {[
+                      { name: 'CoolGamer42', badges: ['SUB'], time: '2m ago' },
+                      { name: 'StreamFan99', badges: ['VIP', 'SUB'], time: '1m ago' },
+                      { name: 'ProPlayer_X', badges: [], time: '45s ago' },
+                    ].map((viewer, index) => (
+                      <div key={index} className="flex items-center justify-between p-2.5 rounded-lg bg-[#27272a]/30 border border-[#27272a]/50">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-7 h-7 rounded-lg bg-[#27272a] flex items-center justify-center text-xs font-bold text-zinc-500">
+                            {index + 1}
+                          </div>
+                          <div>
+                            <div className="flex items-center gap-1.5">
+                              <span className="text-xs font-medium text-white">{viewer.name}</span>
+                              {viewer.badges.includes('VIP') && (
+                                <span className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded text-[9px] font-semibold uppercase bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                                  <Crown className="w-2.5 h-2.5" />
+                                  VIP
+                                </span>
+                              )}
+                              {viewer.badges.includes('SUB') && (
+                                <span className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded text-[9px] font-semibold uppercase bg-[#9146FF]/20 text-[#9146FF] border border-[#9146FF]/30">
+                                  <Star className="w-2.5 h-2.5" />
+                                  SUB
+                                </span>
+                              )}
+                            </div>
+                            <div className="flex items-center gap-1 text-[10px] text-zinc-500 mt-0.5">
+                              <Clock className="w-2.5 h-2.5" />
+                              {viewer.time}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6">
-                  <div className="col-span-3 md:col-span-2 space-y-4">
-                    <div className="p-6 rounded-xl border border-[#27272a] bg-[#18181b]/50">
-                      <div className="flex justify-between items-center mb-6">
-                        <h4 className="font-medium text-white">Next Players</h4>
-                        <button className="text-xs bg-[#9146FF] text-white px-3 py-1.5 rounded font-medium">Pull Viewers</button>
+                {/* Current Session Card */}
+                <div className="p-5 rounded-2xl bg-[#18181b]/50 border border-[#27272a]">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-full bg-[#5865F2]/20 flex items-center justify-center">
+                        <Volume2 className="w-4 h-4 text-[#5865F2]" />
                       </div>
-                      <div className="space-y-3">
-                        {[1, 2, 3].map((i) => (
-                          <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-[#27272a]/30 border border-[#27272a]/50">
-                            <div className="flex items-center gap-3">
-                              <div className="w-8 h-8 rounded bg-[#27272a] flex items-center justify-center text-xs text-[#71717a]">{i}</div>
-                              <div>
-                                <div className="text-sm font-medium text-white">User_{i}</div>
-                                <div className="text-xs text-[#71717a]">Sub • 2m ago</div>
-                              </div>
-                            </div>
-                            <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                          </div>
-                        ))}
+                      <div>
+                        <h2 className="text-sm font-semibold text-zinc-300">Current Session</h2>
+                        <p className="text-[10px] text-zinc-500"><span className="text-emerald-400">3</span> of 4 in voice</p>
                       </div>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <button className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-[#27272a]/50 text-zinc-400">
+                        <Copy className="w-3 h-3" />
+                        Copy Invite
+                      </button>
+                      <button className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-[#5865F2]/20 text-[#5865F2]">
+                        <ExternalLink className="w-3 h-3" />
+                        Open Discord
+                      </button>
                     </div>
                   </div>
-                  
-                  <div className="col-span-3 md:col-span-1">
-                    <div className="p-6 rounded-xl border border-[#27272a] bg-[#18181b]/50 h-full">
-                      <h4 className="font-medium text-white mb-4">Voice Status</h4>
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-3 text-sm text-[#a1a1aa]">
-                          <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                          Connected to Voice
-                        </div>
-                        <div className="pt-4 border-t border-[#27272a]">
-                          <div className="text-xs text-[#71717a] uppercase font-medium mb-2">Channel</div>
-                          <div className="flex items-center gap-2 text-white">
-                            <MessageSquare className="w-4 h-4 text-[#5865F2]" />
-                            <span>Stream Room 1</span>
+
+                  <div className="space-y-2">
+                    {[
+                      { name: 'CoolGamer42', discord: 'CoolGamer#1234', status: 'connected' },
+                      { name: 'StreamFan99', discord: 'StreamFan#5678', status: 'connected' },
+                      { name: 'ProPlayer_X', discord: 'ProPlayer#9012', status: 'waiting' },
+                    ].map((participant, index) => (
+                      <div key={index} className="flex items-center justify-between p-2.5 rounded-lg bg-[#27272a]/30 border border-[#27272a]/50">
+                        <div className="flex items-center gap-2.5">
+                          <div className={cn(
+                            'w-8 h-8 rounded-full flex items-center justify-center',
+                            participant.status === 'connected' ? 'bg-emerald-500/20' : 'bg-amber-500/20'
+                          )}>
+                            <Mic className={cn('w-4 h-4', participant.status === 'connected' ? 'text-emerald-400' : 'text-amber-400')} />
+                          </div>
+                          <div>
+                            <div className="flex items-center gap-1.5">
+                              <Twitch className="w-3 h-3 text-[#9146FF]" />
+                              <span className="text-xs font-medium text-white">{participant.name}</span>
+                            </div>
+                            <div className="flex items-center gap-1 text-[10px] text-zinc-500 mt-0.5">
+                              <MessageSquare className="w-2.5 h-2.5 text-[#5865F2]" />
+                              {participant.discord}
+                            </div>
+                            <div className={cn(
+                              'flex items-center gap-1 text-[10px] font-medium mt-0.5',
+                              participant.status === 'connected' ? 'text-emerald-400' : 'text-amber-400'
+                            )}>
+                              {participant.status === 'connected' ? (
+                                <><CheckCircle2 className="w-2.5 h-2.5" /> In Voice</>
+                              ) : (
+                                <><Clock className="w-2.5 h-2.5" /> Waiting to Join</>
+                              )}
+                            </div>
                           </div>
                         </div>
+                        <div className="flex items-center gap-1">
+                          {participant.status === 'waiting' && (
+                            <button className="p-1.5 rounded-lg bg-[#5865F2]/20 text-[#5865F2]">
+                              <RefreshCw className="w-3 h-3" />
+                            </button>
+                          )}
+                          <button className="p-1.5 rounded-lg bg-red-500/10 text-red-400">
+                            <UserX className="w-3 h-3" />
+                          </button>
+                        </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

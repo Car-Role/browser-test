@@ -399,10 +399,10 @@ function Dashboard() {
                       key={size}
                       onClick={() => setPartySize(size)}
                       className={cn(
-                        'flex-1 py-2 rounded-lg font-semibold text-sm transition-all',
+                        'flex-1 py-2 rounded-lg font-semibold text-sm transition-all border',
                         partySize === size
-                          ? 'bg-[#9146FF] text-white'
-                          : 'bg-[#27272a]/50 text-zinc-400 hover:bg-[#27272a] hover:text-white'
+                          ? 'bg-white/10 text-white border-white/50'
+                          : 'bg-[#27272a]/50 text-zinc-400 border-transparent hover:bg-[#27272a] hover:text-white'
                       )}
                     >
                       {size}
@@ -418,10 +418,10 @@ function Dashboard() {
                   <button
                     onClick={() => setSelectionMode('queue')}
                     className={cn(
-                      'py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all',
+                      'py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all border',
                       selectionMode === 'queue'
-                        ? 'bg-[#9146FF] text-white'
-                        : 'bg-[#27272a]/50 text-zinc-400 hover:bg-[#27272a] hover:text-white'
+                        ? 'bg-white/10 text-white border-white/50'
+                        : 'bg-[#27272a]/50 text-zinc-400 border-transparent hover:bg-[#27272a] hover:text-white'
                     )}
                   >
                     <ListOrdered className="w-4 h-4" />
@@ -430,10 +430,10 @@ function Dashboard() {
                   <button
                     onClick={() => setSelectionMode('random')}
                     className={cn(
-                      'py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all',
+                      'py-3 px-4 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all border',
                       selectionMode === 'random'
-                        ? 'bg-[#9146FF] text-white'
-                        : 'bg-[#27272a]/50 text-zinc-400 hover:bg-[#27272a] hover:text-white'
+                        ? 'bg-white/10 text-white border-white/50'
+                        : 'bg-[#27272a]/50 text-zinc-400 border-transparent hover:bg-[#27272a] hover:text-white'
                     )}
                   >
                     <Shuffle className="w-4 h-4" />
