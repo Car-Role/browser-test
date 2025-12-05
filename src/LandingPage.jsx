@@ -52,7 +52,7 @@ function FeatureCard({ icon, title, description }) {
 function Step({ number, title, description }) {
   return (
     <div className="flex gap-6 group">
-      <div className="font-display font-bold text-3xl text-[#27272a] group-hover:text-[#9146FF] transition-colors">
+      <div className="font-display font-bold text-3xl text-[#27272a] group-hover:text-[#06B6D4] transition-colors">
         {number}
       </div>
       <div>
@@ -73,12 +73,12 @@ function LandingPage() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-[#09090b] text-white font-sans selection:bg-[#9146FF]/30">
+    <div className="relative w-full min-h-screen overflow-hidden bg-[#09090b] text-white font-sans selection:bg-[#06B6D4]/30">
       
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-full h-[100vh] overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[10%] w-[40vw] h-[40vw] bg-[#9146FF]/10 rounded-full blur-[120px] animate-pulse-slow"></div>
-        <div className="absolute top-[10%] right-[10%] w-[30vw] h-[30vw] bg-[#5865F2]/10 rounded-full blur-[100px] animate-pulse-slow delay-1000"></div>
+        <div className="absolute top-[-20%] left-[10%] w-[40vw] h-[40vw] bg-[#06B6D4]/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div className="absolute top-[10%] right-[10%] w-[30vw] h-[30vw] bg-[#06B6D4]/10 rounded-full blur-[100px] animate-pulse-slow delay-1000"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
       </div>
 
@@ -89,7 +89,7 @@ function LandingPage() {
       )}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="relative w-8 h-8 bg-gradient-to-br from-[#9146FF] to-[#5865F2] rounded-lg flex items-center justify-center overflow-hidden">
+            <div className="relative w-8 h-8 bg-gradient-to-br from-[#06B6D4] to-[#0891B2] rounded-lg flex items-center justify-center overflow-hidden">
               <Gamepad2 className="w-5 h-5 text-white relative z-10" />
               <div className="absolute inset-0 bg-white/20 group-hover:bg-white/30 transition-colors"></div>
             </div>
@@ -110,7 +110,7 @@ function LandingPage() {
               <span className="relative z-10 flex items-center gap-2">
                 Start Free <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#9146FF] to-[#5865F2] opacity-0 group-hover:opacity-10 transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#06B6D4] to-[#0891B2] opacity-0 group-hover:opacity-10 transition-opacity"></div>
             </a>
           </div>
         </div>
@@ -125,7 +125,7 @@ function LandingPage() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#27272a]/50 border border-[#3f3f46]/50 backdrop-blur-sm mb-8"
           >
-            <span className="flex h-2 w-2 rounded-full bg-[#9146FF]"></span>
+            <span className="flex h-2 w-2 rounded-full bg-[#06B6D4]"></span>
             <span className="text-xs font-medium text-[#d4d4d8] tracking-wide uppercase">Now in Beta 2.0</span>
           </motion.div>
 
@@ -155,9 +155,9 @@ function LandingPage() {
           >
             <a
               href="#auth"
-              className="w-full sm:w-auto px-8 py-4 bg-[#9146FF] hover:bg-[#8234F8] text-white rounded-xl font-semibold transition-all hover:shadow-[0_0_20px_-5px_rgba(145,70,255,0.5)] flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 bg-[#06B6D4] hover:bg-[#0891B2] text-white rounded-xl font-semibold transition-all hover:shadow-[0_0_20px_-5px_rgba(6,182,212,0.5)] flex items-center justify-center gap-2"
             >
-              <Twitch className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
               Get Started
             </a>
             <a
@@ -197,7 +197,7 @@ function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="relative rounded-xl border border-[#27272a] bg-[#09090b] shadow-2xl overflow-hidden">
             {/* Top Gloss Line */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#9146FF] to-transparent opacity-50"></div>
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#06B6D4] to-transparent opacity-50"></div>
             
             {/* Browser Header */}
             <div className="h-10 border-b border-[#27272a] bg-[#18181b] flex items-center px-4 gap-2">
@@ -216,7 +216,7 @@ function LandingPage() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#9146FF] to-[#5865F2] rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-br from-[#06B6D4] to-[#0891B2] rounded-lg flex items-center justify-center">
                       <Gamepad2 className="w-5 h-5 text-white" />
                     </div>
                     <span className="font-bold text-lg">ViewerQ</span>
@@ -224,7 +224,7 @@ function LandingPage() {
                   <div className="hidden sm:block h-6 w-px bg-[#27272a]"></div>
                   <div className="hidden sm:block">
                     <h1 className="text-base font-semibold text-white">Dashboard</h1>
-                    <p className="text-xs text-zinc-500">Welcome back, <span className="text-[#9146FF]">StreamerPro</span></p>
+                    <p className="text-xs text-zinc-500">Welcome back, <span className="text-[#06B6D4]">StreamerPro</span></p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -292,7 +292,7 @@ function LandingPage() {
                   </div>
 
                   {/* Pull Button */}
-                  <button className="w-full py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 bg-[#9146FF] text-white">
+                  <button className="w-full py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 bg-[#06B6D4]/25 text-[#06B6D4] border border-[#06B6D4]/50">
                     <Users className="w-4 h-4" />
                     Pull 4 Viewers
                   </button>
@@ -426,7 +426,7 @@ function LandingPage() {
               </div>
             </div>
           </div>
-          <div className="absolute -inset-4 bg-gradient-to-tr from-[#9146FF]/20 to-[#5865F2]/20 rounded-[2rem] blur-2xl -z-10 opacity-50"></div>
+          <div className="absolute -inset-4 bg-gradient-to-tr from-[#06B6D4]/20 to-[#06B6D4]/10 rounded-[2rem] blur-2xl -z-10 opacity-50"></div>
         </div>
       </section>
 
@@ -485,7 +485,7 @@ function LandingPage() {
             
             <div className="flex-1 relative">
               <div className="relative w-full aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#9146FF]/20 to-[#5865F2]/20 rounded-full blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#06B6D4]/20 to-[#0891B2]/20 rounded-full blur-3xl"></div>
                 <div className="relative z-10 bg-[#18181b] border border-[#27272a] rounded-2xl p-8 shadow-2xl h-full flex flex-col justify-center items-center text-center">
                   <div className="w-20 h-20 bg-[#27272a] rounded-full flex items-center justify-center mb-6 relative">
                     <Play className="w-8 h-8 text-white fill-current ml-1" />
@@ -506,13 +506,14 @@ function LandingPage() {
       <footer className="py-12 px-6 border-t border-[#27272a]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-gradient-to-br from-[#9146FF] to-[#5865F2] rounded flex items-center justify-center">
+            <div className="w-6 h-6 bg-gradient-to-br from-[#06B6D4] to-[#0891B2] rounded flex items-center justify-center">
               <Gamepad2 className="w-3 h-3 text-white" />
             </div>
             <span className="font-display font-bold text-lg tracking-tight">ViewerQ</span>
           </div>
-          <div className="text-sm text-[#52525b]">
-            &copy; 2025 ViewerQ. Not affiliated with Twitch or Discord.
+          <div className="text-sm text-[#52525b] text-center">
+            <p>&copy; 2025 ViewerQ. Not affiliated with Twitch or Discord.</p>
+            <p className="mt-1">Contact: <a href="mailto:CoCaptainJack@gmail.com" className="text-[#06B6D4] hover:underline">CoCaptainJack@gmail.com</a></p>
           </div>
         </div>
       </footer>

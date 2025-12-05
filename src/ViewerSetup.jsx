@@ -27,18 +27,18 @@ function ConnectionCard({ platform, connected, username, onConnect, onDisconnect
       name: 'Twitch',
       icon: Twitch,
       color: '#9146FF',
-      bgColor: 'bg-[#9146FF]',
-      hoverColor: 'hover:bg-[#7c3aed]',
-      borderColor: 'border-[#9146FF]/30',
+      bgColor: 'bg-[#9146FF]/20',
+      hoverColor: 'hover:bg-[#9146FF]/30',
+      borderColor: 'border-[#9146FF]/50',
       textColor: 'text-[#9146FF]',
     },
     discord: {
       name: 'Discord',
       icon: MessageSquare,
       color: '#5865F2',
-      bgColor: 'bg-[#5865F2]',
-      hoverColor: 'hover:bg-[#4752C4]',
-      borderColor: 'border-[#5865F2]/30',
+      bgColor: 'bg-[#5865F2]/20',
+      hoverColor: 'hover:bg-[#5865F2]/30',
+      borderColor: 'border-[#5865F2]/50',
       textColor: 'text-[#5865F2]',
     },
   };
@@ -89,9 +89,11 @@ function ConnectionCard({ platform, connected, username, onConnect, onDisconnect
           onClick={onConnect}
           disabled={loading}
           className={cn(
-            'w-full py-3 rounded-xl text-white font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50',
+            'w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50 border',
             bgColor,
-            hoverColor
+            hoverColor,
+            borderColor,
+            textColor
           )}
         >
           {loading ? (
@@ -176,14 +178,14 @@ function ReadyState() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: 'spring', duration: 0.6 }}
-        className="w-24 h-24 rounded-full bg-gradient-to-br from-[#9146FF]/20 to-[#5865F2]/20 flex items-center justify-center mx-auto mb-6"
+        className="w-24 h-24 rounded-full bg-gradient-to-br from-[#06B6D4]/20 to-[#0891B2]/20 flex items-center justify-center mx-auto mb-6"
       >
         <motion.div
           initial={{ rotate: -20 }}
           animate={{ rotate: 0 }}
           transition={{ delay: 0.3, type: 'spring' }}
         >
-          <PartyPopper className="w-12 h-12 text-[#9146FF]" />
+          <PartyPopper className="w-12 h-12 text-[#06B6D4]" />
         </motion.div>
       </motion.div>
 
@@ -197,8 +199,8 @@ function ReadyState() {
         <h3 className="font-semibold text-white mb-4">How to join a game:</h3>
         <div className="space-y-4">
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#9146FF]/20 flex items-center justify-center flex-shrink-0">
-              <span className="text-sm font-bold text-[#9146FF]">1</span>
+            <div className="w-8 h-8 rounded-lg bg-[#06B6D4]/20 flex items-center justify-center flex-shrink-0">
+              <span className="text-sm font-bold text-[#06B6D4]">1</span>
             </div>
             <div>
               <p className="text-sm text-zinc-300">Find a stream using ViewerQ</p>
@@ -206,8 +208,8 @@ function ReadyState() {
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#9146FF]/20 flex items-center justify-center flex-shrink-0">
-              <span className="text-sm font-bold text-[#9146FF]">2</span>
+            <div className="w-8 h-8 rounded-lg bg-[#06B6D4]/20 flex items-center justify-center flex-shrink-0">
+              <span className="text-sm font-bold text-[#06B6D4]">2</span>
             </div>
             <div>
               <p className="text-sm text-zinc-300">
@@ -285,8 +287,8 @@ function ViewerSetup() {
     <div className="min-h-screen bg-[#09090b] text-white font-sans flex flex-col">
       {/* Background Effects */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] right-[10%] w-[40vw] h-[40vw] bg-[#5865F2]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[10%] w-[30vw] h-[30vw] bg-[#9146FF]/10 rounded-full blur-[100px]" />
+        <div className="absolute top-[-20%] right-[10%] w-[40vw] h-[40vw] bg-[#06B6D4]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[10%] w-[30vw] h-[30vw] bg-[#06B6D4]/10 rounded-full blur-[100px]" />
       </div>
 
       {/* Header */}
@@ -294,7 +296,7 @@ function ViewerSetup() {
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <a href="#" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#9146FF] to-[#5865F2] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#06B6D4] to-[#0891B2] rounded-lg flex items-center justify-center">
                 <Gamepad2 className="w-5 h-5 text-white" />
               </div>
               <span className="font-display font-bold text-xl tracking-tight">ViewerQ</span>
@@ -317,8 +319,8 @@ function ViewerSetup() {
             >
               {/* Header */}
               <div className="text-center mb-8">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#9146FF]/20 to-[#5865F2]/20 flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-[#9146FF]" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#06B6D4]/20 to-[#0891B2]/20 flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-[#06B6D4]" />
                 </div>
                 <h1 className="text-3xl font-bold text-white mb-2">Link Your Accounts</h1>
                 <p className="text-zinc-400">

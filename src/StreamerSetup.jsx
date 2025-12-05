@@ -50,7 +50,7 @@ function StepIndicator({ steps, currentStep }) {
                   isComplete
                     ? 'bg-emerald-500 text-white'
                     : isCurrent
-                    ? 'bg-[#9146FF] text-white'
+                    ? 'bg-[#06B6D4] text-white'
                     : 'bg-[#27272a] text-zinc-500'
                 )}
               >
@@ -148,7 +148,7 @@ function TwitchStep({ onComplete }) {
           </div>
           <button
             onClick={onComplete}
-            className="w-full py-4 rounded-xl bg-[#9146FF] hover:bg-[#7c3aed] text-white font-semibold flex items-center justify-center gap-2 transition-all"
+            className="w-full py-4 rounded-xl bg-[#06B6D4] hover:bg-[#0891B2] text-white font-semibold flex items-center justify-center gap-2 transition-all"
           >
             Continue
             <ArrowRight className="w-5 h-5" />
@@ -275,7 +275,7 @@ function DiscordStep({ onComplete, onBack }) {
           ) : (
             <button
               onClick={onComplete}
-              className="flex-1 py-3 rounded-xl bg-[#9146FF] hover:bg-[#7c3aed] text-white font-semibold flex items-center justify-center gap-2 transition-all"
+              className="flex-1 py-3 rounded-xl bg-[#06B6D4] hover:bg-[#0891B2] text-white font-semibold flex items-center justify-center gap-2 transition-all"
             >
               Continue
               <ArrowRight className="w-5 h-5" />
@@ -315,7 +315,7 @@ function BotStep({ onComplete, onBack }) {
       <div className="space-y-4">
         {/* Bot Card */}
         <div className="p-4 rounded-xl bg-[#27272a]/50 border border-[#3f3f46] flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#9146FF] to-[#5865F2] flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center">
             <Bot className="w-6 h-6 text-white" />
           </div>
           <div className="flex-1">
@@ -376,7 +376,7 @@ function BotStep({ onComplete, onBack }) {
           <button
             onClick={botAdded ? onComplete : handleCheckBot}
             disabled={checking}
-            className="flex-1 py-3 rounded-xl bg-[#9146FF] hover:bg-[#7c3aed] text-white font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50"
+            className="flex-1 py-3 rounded-xl bg-[#06B6D4] hover:bg-[#0891B2] text-white font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50"
           >
             {checking ? (
               <>
@@ -461,7 +461,7 @@ function ReadyStep() {
         {/* Go to Dashboard */}
         <a
           href="#dashboard"
-          className="w-full py-4 rounded-xl bg-[#9146FF] hover:bg-[#7c3aed] text-white font-semibold flex items-center justify-center gap-2 transition-all"
+          className="w-full py-4 rounded-xl bg-[#06B6D4] hover:bg-[#0891B2] text-white font-semibold flex items-center justify-center gap-2 transition-all"
         >
           <Gamepad2 className="w-5 h-5" />
           Go to Dashboard
@@ -481,8 +481,8 @@ function StreamerSetup() {
     <div className="min-h-screen bg-[#09090b] text-white font-sans flex flex-col">
       {/* Background Effects */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[10%] w-[40vw] h-[40vw] bg-[#9146FF]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[10%] w-[30vw] h-[30vw] bg-[#5865F2]/10 rounded-full blur-[100px]" />
+        <div className="absolute top-[-20%] left-[10%] w-[40vw] h-[40vw] bg-[#06B6D4]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[10%] w-[30vw] h-[30vw] bg-[#06B6D4]/10 rounded-full blur-[100px]" />
       </div>
 
       {/* Header */}
@@ -490,7 +490,7 @@ function StreamerSetup() {
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <a href="#" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#9146FF] to-[#5865F2] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#06B6D4] to-[#0891B2] rounded-lg flex items-center justify-center">
                 <Gamepad2 className="w-5 h-5 text-white" />
               </div>
               <span className="font-display font-bold text-xl tracking-tight">ViewerQ</span>

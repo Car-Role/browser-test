@@ -265,7 +265,7 @@ function ConfirmModal({ isOpen, onClose, onConfirm, title, description, confirmT
               'px-4 py-2 rounded-lg font-medium transition-colors',
               variant === 'danger'
                 ? 'bg-red-500 text-white hover:bg-red-600'
-                : 'bg-[#9146FF] text-white hover:bg-[#7c3aed]'
+                : 'bg-[#06B6D4] text-white hover:bg-[#0891B2]'
             )}
           >
             {confirmText}
@@ -323,8 +323,8 @@ function Dashboard() {
     <div className="min-h-screen bg-[#09090b] text-white font-sans">
       {/* Background Effects */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] right-[5%] w-[30vw] h-[30vw] bg-[#9146FF]/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[-10%] left-[10%] w-[25vw] h-[25vw] bg-[#5865F2]/5 rounded-full blur-[80px]" />
+        <div className="absolute top-[-10%] right-[5%] w-[30vw] h-[30vw] bg-[#06B6D4]/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] left-[10%] w-[25vw] h-[25vw] bg-[#06B6D4]/5 rounded-full blur-[80px]" />
       </div>
 
       {/* Header */}
@@ -333,16 +333,16 @@ function Dashboard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <a href="#" className="flex items-center gap-2 group">
-                <div className="w-8 h-8 bg-gradient-to-br from-[#9146FF] to-[#5865F2] rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-br from-[#06B6D4] to-[#0891B2] rounded-lg flex items-center justify-center">
                   <Gamepad2 className="w-5 h-5 text-white" />
                 </div>
-                <span className="font-display font-bold text-xl tracking-tight group-hover:text-[#9146FF] transition-colors">ViewerQ</span>
+                <span className="font-display font-bold text-xl tracking-tight group-hover:text-[#06B6D4] transition-colors">ViewerQ</span>
               </a>
               <div className="hidden sm:block h-6 w-px bg-[#27272a]" />
               <div className="hidden sm:block">
                 <h1 className="text-lg font-semibold text-white">Dashboard</h1>
                 <p className="text-sm text-zinc-500">
-                  Welcome back, <span className="text-[#9146FF]">{streamerName}</span>
+                  Welcome back, <span className="text-[#06B6D4]">{streamerName}</span>
                 </p>
               </div>
             </div>
@@ -453,8 +453,8 @@ function Dashboard() {
                 className={cn(
                   'w-full py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 transition-all',
                   queueViewers.length > 0
-                    ? 'bg-[#9146FF] text-white hover:bg-[#7c3aed] hover:shadow-[0_0_20px_-5px_rgba(145,70,255,0.5)]'
-                    : 'bg-[#27272a] text-zinc-600 cursor-not-allowed'
+                    ? 'bg-[#06B6D4]/25 text-[#06B6D4] border border-[#06B6D4]/50 hover:bg-[#06B6D4]/35 hover:border-[#06B6D4]/70 hover:shadow-[0_0_20px_-5px_rgba(6,182,212,0.4)]'
+                    : 'bg-[#27272a] text-zinc-600 cursor-not-allowed border border-transparent'
                 )}
               >
                 <Users className="w-5 h-5" />

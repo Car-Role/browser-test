@@ -60,7 +60,7 @@ function Input({ icon: Icon, type = 'text', placeholder, value, onChange, error 
         value={value}
         onChange={onChange}
         className={cn(
-          'w-full pl-12 pr-12 py-3.5 rounded-xl bg-[#27272a]/50 border text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-[#9146FF] transition-all',
+          'w-full pl-12 pr-12 py-3.5 rounded-xl bg-[#27272a]/50 border text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] transition-all',
           error ? 'border-red-500' : 'border-[#3f3f46]'
         )}
       />
@@ -96,7 +96,7 @@ function RoleCard({ role, icon: Icon, title, description, selected, onClick }) {
       className={cn(
         'w-full p-6 rounded-2xl border text-left transition-all',
         selected
-          ? 'bg-[#9146FF]/10 border-[#9146FF]/50 ring-2 ring-[#9146FF]/30'
+          ? 'bg-[#06B6D4]/10 border-[#06B6D4]/50 ring-2 ring-[#06B6D4]/30'
           : 'bg-[#18181b]/50 border-[#27272a] hover:border-[#3f3f46] hover:bg-[#18181b]'
       )}
     >
@@ -104,10 +104,10 @@ function RoleCard({ role, icon: Icon, title, description, selected, onClick }) {
         <div
           className={cn(
             'w-12 h-12 rounded-xl flex items-center justify-center transition-colors',
-            selected ? 'bg-[#9146FF]/20' : 'bg-[#27272a]'
+            selected ? 'bg-[#06B6D4]/20' : 'bg-[#27272a]'
           )}
         >
-          <Icon className={cn('w-6 h-6', selected ? 'text-[#9146FF]' : 'text-zinc-400')} />
+          <Icon className={cn('w-6 h-6', selected ? 'text-[#06B6D4]' : 'text-zinc-400')} />
         </div>
         <div className="flex-1">
           <div className="flex items-center justify-between">
@@ -115,7 +115,7 @@ function RoleCard({ role, icon: Icon, title, description, selected, onClick }) {
             <div
               className={cn(
                 'w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all',
-                selected ? 'border-[#9146FF] bg-[#9146FF]' : 'border-zinc-600'
+                selected ? 'border-[#06B6D4] bg-[#06B6D4]' : 'border-zinc-600'
               )}
             >
               {selected && <CheckCircle2 className="w-3 h-3 text-white" />}
@@ -200,7 +200,7 @@ function SignUpForm({ onSuccess }) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 rounded-xl bg-[#9146FF] hover:bg-[#7c3aed] text-white font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50"
+        className="w-full py-4 rounded-xl bg-[#06B6D4] hover:bg-[#0891B2] text-white font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50"
       >
         {loading ? (
           <>
@@ -263,14 +263,14 @@ function LogInForm({ onSuccess }) {
         onChange={(e) => setPassword(e.target.value)}
       />
       <div className="flex justify-end">
-        <button type="button" className="text-sm text-[#9146FF] hover:underline">
+        <button type="button" className="text-sm text-[#06B6D4] hover:underline">
           Forgot password?
         </button>
       </div>
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 rounded-xl bg-[#9146FF] hover:bg-[#7c3aed] text-white font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50"
+        className="w-full py-4 rounded-xl bg-[#06B6D4] hover:bg-[#0891B2] text-white font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50"
       >
         {loading ? (
           <>
@@ -376,8 +376,8 @@ function RoleSelection({ onSelect }) {
         className={cn(
           'w-full py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all',
           selectedRole
-            ? 'bg-[#9146FF] hover:bg-[#7c3aed] text-white'
-            : 'bg-[#27272a] text-zinc-600 cursor-not-allowed'
+            ? 'bg-[#06B6D4] hover:bg-[#0891B2] text-white'
+            : 'bg-[#27272a] text-zinc-600 cursor-not-allowed border border-transparent'
         )}
       >
         Continue
@@ -405,8 +405,8 @@ function Auth() {
     <div className="min-h-screen bg-[#09090b] text-white font-sans flex flex-col">
       {/* Background Effects */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[20%] w-[40vw] h-[40vw] bg-[#9146FF]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[10%] w-[30vw] h-[30vw] bg-[#5865F2]/10 rounded-full blur-[100px]" />
+        <div className="absolute top-[-20%] left-[20%] w-[40vw] h-[40vw] bg-[#06B6D4]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[10%] w-[30vw] h-[30vw] bg-[#06B6D4]/10 rounded-full blur-[100px]" />
       </div>
 
       {/* Header */}
@@ -414,7 +414,7 @@ function Auth() {
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <a href="#" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#9146FF] to-[#5865F2] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#06B6D4] to-[#0891B2] rounded-lg flex items-center justify-center">
                 <Gamepad2 className="w-5 h-5 text-white" />
               </div>
               <span className="font-display font-bold text-xl tracking-tight">ViewerQ</span>
@@ -467,11 +467,11 @@ function Auth() {
                 {activeTab === 'signup' && (
                   <p className="text-xs text-zinc-500 text-center mt-6">
                     By signing up, you agree to our{' '}
-                    <a href="#" className="text-[#9146FF] hover:underline">
+                    <a href="#" className="text-[#06B6D4] hover:underline">
                       Terms of Service
                     </a>{' '}
                     and{' '}
-                    <a href="#" className="text-[#9146FF] hover:underline">
+                    <a href="#" className="text-[#06B6D4] hover:underline">
                       Privacy Policy
                     </a>
                   </p>
