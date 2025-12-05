@@ -89,15 +89,15 @@ function LandingPage() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="text-sm font-medium text-[#a1a1aa] hover:text-white transition-colors hidden sm:block">
+            <a href="#auth" className="text-sm font-medium text-[#a1a1aa] hover:text-white transition-colors hidden sm:block">
               Log in
-            </button>
-            <button className="group relative px-5 py-2.5 bg-white text-black rounded-full font-semibold text-sm overflow-hidden transition-transform active:scale-95">
+            </a>
+            <a href="#auth" className="group relative px-5 py-2.5 bg-white text-black rounded-full font-semibold text-sm overflow-hidden transition-transform active:scale-95">
               <span className="relative z-10 flex items-center gap-2">
                 Start Free <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#9146FF] to-[#5865F2] opacity-0 group-hover:opacity-10 transition-opacity"></div>
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -140,18 +140,11 @@ function LandingPage() {
             className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
           >
             <a
-              href="#streamer-setup"
+              href="#auth"
               className="w-full sm:w-auto px-8 py-4 bg-[#9146FF] hover:bg-[#8234F8] text-white rounded-xl font-semibold transition-all hover:shadow-[0_0_20px_-5px_rgba(145,70,255,0.5)] flex items-center justify-center gap-2"
             >
               <Twitch className="w-5 h-5" />
-              I'm a Streamer
-            </a>
-            <a
-              href="#viewer-setup"
-              className="w-full sm:w-auto px-8 py-4 bg-[#5865F2] hover:bg-[#4752C4] text-white rounded-xl font-semibold transition-all hover:shadow-[0_0_20px_-5px_rgba(88,101,242,0.5)] flex items-center justify-center gap-2"
-            >
-              <Users className="w-5 h-5" />
-              I'm a Viewer
+              Get Started
             </a>
             <a
               href="#dashboard"

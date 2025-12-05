@@ -5,12 +5,14 @@ import LandingPage from './LandingPage';
 import Dashboard from './Dashboard';
 import StreamerSetup from './StreamerSetup';
 import ViewerSetup from './ViewerSetup';
+import Auth from './Auth';
 
 function getViewFromHash() {
   const hash = window.location.hash;
   if (hash === '#dashboard') return 'dashboard';
   if (hash === '#streamer-setup') return 'streamer-setup';
   if (hash === '#viewer-setup') return 'viewer-setup';
+  if (hash === '#auth' || hash === '#signup' || hash === '#login') return 'auth';
   return 'landing';
 }
 
@@ -34,6 +36,8 @@ function App() {
       return <StreamerSetup />;
     case 'viewer-setup':
       return <ViewerSetup />;
+    case 'auth':
+      return <Auth />;
     default:
       return <LandingPage />;
   }
