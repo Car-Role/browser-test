@@ -140,19 +140,25 @@ function LandingPage() {
             className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
           >
             <a
-              href="#dashboard"
+              href="#streamer-setup"
               className="w-full sm:w-auto px-8 py-4 bg-[#9146FF] hover:bg-[#8234F8] text-white rounded-xl font-semibold transition-all hover:shadow-[0_0_20px_-5px_rgba(145,70,255,0.5)] flex items-center justify-center gap-2"
             >
               <Twitch className="w-5 h-5" />
-              Connect with Twitch
+              I'm a Streamer
             </a>
-            <button className="w-full sm:w-auto px-8 py-4 bg-[#5865F2] hover:bg-[#4752C4] text-white rounded-xl font-semibold transition-all hover:shadow-[0_0_20px_-5px_rgba(88,101,242,0.5)] flex items-center justify-center gap-2">
+            <a
+              href="#viewer-setup"
+              className="w-full sm:w-auto px-8 py-4 bg-[#5865F2] hover:bg-[#4752C4] text-white rounded-xl font-semibold transition-all hover:shadow-[0_0_20px_-5px_rgba(88,101,242,0.5)] flex items-center justify-center gap-2"
+            >
               <Users className="w-5 h-5" />
-              Viewer Connect
-            </button>
-            <button className="w-full sm:w-auto px-8 py-4 bg-[#18181b] border border-[#27272a] hover:bg-[#27272a] text-white rounded-xl font-semibold transition-all flex items-center justify-center gap-2">
+              I'm a Viewer
+            </a>
+            <a
+              href="#dashboard"
+              className="w-full sm:w-auto px-8 py-4 bg-[#18181b] border border-[#27272a] hover:bg-[#27272a] text-white rounded-xl font-semibold transition-all flex items-center justify-center gap-2"
+            >
               View Demo
-            </button>
+            </a>
           </motion.div>
 
           {/* Social Proof */}
